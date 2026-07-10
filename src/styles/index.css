@@ -210,25 +210,29 @@ button {
   font-size: 2rem;
 }
 
-.journey-arrow {
+.journey-connector {
   display: flex;
   min-width: 1.5rem;
   flex: 1;
   align-items: center;
   margin: 0 0.45rem 0 0.8rem;
   color: var(--gold);
+  transform: translateY(0.35rem);
 }
 
-.journey-arrow span {
+.journey-connector span {
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, var(--gold), rgba(176, 141, 87, 0.25));
 }
 
-.journey-arrow i {
-  margin-left: -0.15rem;
-  font-style: normal;
-  font-size: 0.9rem;
+.journey-connector i {
+  width: 0.48rem;
+  height: 0.48rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--gold);
+  background: white;
+  transform: rotate(45deg);
 }
 
 .journey-step h3 {
@@ -269,6 +273,7 @@ button {
 .global-map {
   position: relative;
   min-height: 26rem;
+  overflow: hidden;
 }
 
 .global-map > img {
@@ -277,6 +282,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
   opacity: 0.27;
   filter: sepia(1) saturate(0.75) hue-rotate(355deg) brightness(1.08);
 }
@@ -292,8 +298,7 @@ button {
   fill: none;
   stroke: var(--gold);
   stroke-width: 1.5;
-  stroke-dasharray: 5 5;
-  marker-end: url(#goldArrow);
+  stroke-dasharray: 4 4;
 }
 
 .global-routes circle {
@@ -349,7 +354,7 @@ button {
     row-gap: 2.5rem;
   }
 
-  .journey-step:nth-child(3) .journey-arrow {
+  .journey-step:nth-child(3) .journey-connector {
     display: none;
   }
 
@@ -389,7 +394,7 @@ button {
     font-size: 1.75rem;
   }
 
-  .journey-arrow {
+  .journey-connector {
     position: absolute;
     top: 2.7rem;
     left: 0.65rem;
@@ -397,24 +402,25 @@ button {
     width: 1px;
     height: 4rem;
     margin: 0;
+    transform: none;
   }
 
-  .journey-step:last-child .journey-arrow {
+  .journey-step:last-child .journey-connector {
     display: none !important;
   }
 
-  .journey-arrow span {
+  .journey-connector span {
     display: block;
     width: 1px;
     height: 100%;
     background: linear-gradient(var(--gold), rgba(176, 141, 87, 0.2));
   }
 
-  .journey-arrow i {
+  .journey-connector i {
     position: absolute;
-    bottom: -0.2rem;
-    left: -0.27rem;
-    transform: rotate(90deg);
+    bottom: -0.15rem;
+    left: -0.22rem;
+    transform: rotate(45deg);
   }
 
   .journey-step h3 {

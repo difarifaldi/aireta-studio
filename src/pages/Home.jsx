@@ -6,7 +6,6 @@ function Stats() {
     { end: 15, label: "YEARS EXPERIENCE" },
     { end: 200, label: "COLLECTIONS PRODUCED" },
     { end: 50, label: "FASHION BRANDS" },
-    { end: 10, label: "COUNTRIES SERVED" },
   ];
   const [counts, setCounts] = useState(items.map(() => 0));
   const ref = useRef(null);
@@ -54,7 +53,7 @@ function Stats() {
   return (
     <div
       ref={ref}
-      className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+      className="mx-auto grid max-w-4xl grid-cols-1 gap-8 px-6 py-12 text-center sm:grid-cols-3"
     >
       {items.map((it, idx) => (
         <div key={idx}>
@@ -257,7 +256,9 @@ function CustomerFeedback() {
                 <div className="feedback-stars" aria-label="5 out of 5 stars">
                   ★ ★ ★ ★ ★
                 </div>
-                <span className="feedback-quote-mark" aria-hidden="true">“</span>
+                <span className="feedback-quote-mark" aria-hidden="true">
+                  “
+                </span>
                 <blockquote>{item.quote}</blockquote>
                 <div className="feedback-author">
                   <span className="feedback-author-line" />
@@ -287,8 +288,22 @@ function CustomerFeedback() {
             ))}
           </div>
           <div className="flex gap-2 sm:hidden">
-            <button type="button" className="slider-arrow" aria-label="Previous testimonial" onClick={() => changeSlide(-1)}>←</button>
-            <button type="button" className="slider-arrow" aria-label="Next testimonial" onClick={() => changeSlide(1)}>→</button>
+            <button
+              type="button"
+              className="slider-arrow"
+              aria-label="Previous testimonial"
+              onClick={() => changeSlide(-1)}
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              className="slider-arrow"
+              aria-label="Next testimonial"
+              onClick={() => changeSlide(1)}
+            >
+              →
+            </button>
           </div>
         </div>
       </div>
@@ -311,7 +326,9 @@ function ProductionJourney() {
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-20">
         <div className="text-center">
           <p className="section-kicker">HOW WE WORK</p>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">Our Production Journey</h2>
+          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+            Our Production Journey
+          </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-stone-500">
             A thoughtful process designed to turn your creative vision into a
             beautifully finished collection.
@@ -321,11 +338,13 @@ function ProductionJourney() {
           {steps.map(([title, description], index) => (
             <article className="journey-step" key={title}>
               <div className="journey-step-top">
-                <span className="journey-number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="journey-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 {index < steps.length - 1 && (
-                  <span className="journey-arrow" aria-hidden="true">
+                  <span className="journey-connector" aria-hidden="true">
                     <span />
-                    <i>→</i>
+                    <i />
                   </span>
                 )}
               </div>
@@ -340,7 +359,14 @@ function ProductionJourney() {
 }
 
 function GlobalReach() {
-  const destinations = ["UAE", "India", "Malaysia", "Singapore", "Australia"];
+  const destinations = [
+    "Sumatra",
+    "Jakarta",
+    "Bali",
+    "Kalimantan",
+    "Sulawesi",
+    "Papua",
+  ];
 
   return (
     <section className="global-section">
@@ -351,8 +377,8 @@ function GlobalReach() {
             Trusted by Fashion Brands Across the World
           </h2>
           <p className="mt-5 text-sm leading-7 text-stone-600">
-            Delivering premium quality garments to our partners in more than 10
-            countries, with Indonesia at the heart of every journey.
+            Menjangkau berbagai kota dan pulau di seluruh Indonesia, dengan
+            Bandung sebagai pusat dari setiap perjalanan produksi kami.
           </p>
           <Link to="/contact" className="gold-link mt-7 inline-flex">
             DISCOVER OUR LOCATION <span aria-hidden="true">→</span>
@@ -364,28 +390,31 @@ function GlobalReach() {
             src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
             alt="World map"
           />
-          <svg className="global-routes" viewBox="0 0 700 360" aria-hidden="true">
-            <defs>
-              <marker id="goldArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L7,3 z" fill="#b08d57" />
-              </marker>
-            </defs>
-            <path d="M527 207 Q450 150 399 171" />
-            <path d="M527 207 Q475 190 455 202" />
-            <path d="M527 207 Q548 184 564 188" />
-            <path d="M527 207 Q565 214 585 224" />
-            <path d="M527 207 Q583 250 600 287" />
-            <circle cx="527" cy="207" r="7" className="map-origin-pulse" />
-            <circle cx="527" cy="207" r="3" />
-            <circle cx="399" cy="171" r="3" />
-            <circle cx="455" cy="202" r="3" />
-            <circle cx="564" cy="188" r="3" />
-            <circle cx="585" cy="224" r="3" />
-            <circle cx="600" cy="287" r="3" />
+          <svg
+            className="global-routes"
+            viewBox="0 0 700 360"
+            aria-hidden="true"
+          >
+            <path d="M522 207 Q503 202 490 205" />
+            <path d="M522 207 Q525 220 536 228" />
+            <path d="M522 207 Q552 196 570 201" />
+            <path d="M522 207 Q565 183 586 184" />
+            <path d="M522 207 Q585 194 612 205" />
+            <path d="M522 207 Q618 186 654 192" />
+            <circle cx="522" cy="207" r="7" className="map-origin-pulse" />
+            <circle cx="522" cy="207" r="3" />
+            <circle cx="490" cy="205" r="3" />
+            <circle cx="536" cy="228" r="3" />
+            <circle cx="570" cy="201" r="3" />
+            <circle cx="586" cy="184" r="3" />
+            <circle cx="612" cy="205" r="3" />
+            <circle cx="654" cy="192" r="3" />
           </svg>
-          <span className="map-label map-label-origin">INDONESIA</span>
+          <span className="map-label map-label-origin">BANDUNG</span>
           <div className="global-destinations">
-            {destinations.map((place) => <span key={place}>{place}</span>)}
+            {destinations.map((place) => (
+              <span key={place}>{place}</span>
+            ))}
           </div>
         </div>
       </div>
