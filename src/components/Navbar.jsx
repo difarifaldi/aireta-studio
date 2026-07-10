@@ -5,7 +5,6 @@ const links = [
   ["/", "HOME"],
   ["/our-services", "OUR SERVICES"],
   ["/portfolio", "PORTFOLIO"],
-  ["/location", "LOCATION"],
   ["/contact", "CONTACT US"],
 ];
 
@@ -33,7 +32,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-stone-200 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
-        <Link to="/" className="font-serif text-xl tracking-[0.22em] sm:text-2xl">
+        <Link
+          to="/"
+          className="font-serif text-xl tracking-[0.22em] sm:text-2xl"
+        >
           AIRETA
         </Link>
 
@@ -65,7 +67,9 @@ export default function Navbar() {
         </nav>
       </div>
 
-      <nav className={`mobile-menu md:hidden ${open ? "mobile-menu-open" : ""}`}>
+      <nav
+        className={`mobile-menu md:hidden ${open ? "mobile-menu-open" : ""}`}
+      >
         <ul className="px-5 pb-6 pt-2">
           {links.map(([to, label]) => (
             <li key={to} className="border-b border-stone-100">

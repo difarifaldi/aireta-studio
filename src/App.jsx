@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -20,10 +21,7 @@ export default function App() {
             path="/location"
             element={<div className="p-20">Location (placeholder)</div>}
           />
-          <Route
-            path="/contact"
-            element={<div className="p-20">Contact (placeholder)</div>}
-          />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </div>
