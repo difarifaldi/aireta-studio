@@ -5,6 +5,8 @@
 :root {
   --serif: "Playfair Display", serif;
   --sans: "Inter", sans-serif;
+  --gold: #b08d57;
+  --gold-dark: #8f6f3d;
 }
 
 html,
@@ -15,8 +17,167 @@ body,
 
 body {
   font-family: var(--sans);
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .font-serif {
   font-family: var(--serif);
+}
+
+/* subtle helpers */
+.smooth-transition {
+  transition: all 0.25s ease;
+}
+
+.stats-divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 18px;
+}
+
+button {
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.nav-link {
+  position: relative;
+  display: block;
+  padding: 0.45rem 0;
+  color: #44403c;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  transition: color 200ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: var(--gold-dark);
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.quote-button {
+  border: 1px solid var(--gold);
+  padding: 0.7rem 1rem;
+  color: #292524;
+  font-size: 0.7rem;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.quote-button:hover {
+  background: var(--gold);
+  color: white;
+}
+
+.menu-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.6rem;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 1.5px;
+  margin: 4.5px 0;
+  background: #292524;
+  transition: transform 250ms ease, opacity 200ms ease;
+}
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  opacity: 0;
+  transition: max-height 350ms ease, opacity 250ms ease;
+}
+
+.mobile-menu-open {
+  max-height: 32rem;
+  opacity: 1;
+}
+
+.mobile-menu .nav-link {
+  padding: 1rem 0;
+  font-size: 0.78rem;
+}
+
+.section-kicker {
+  color: var(--gold-dark);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+}
+
+.gold-link {
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.35rem;
+  color: #44403c;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  transition: color 200ms ease, gap 200ms ease;
+}
+
+.gold-link span {
+  color: var(--gold);
+  font-size: 1.15rem;
+}
+
+.gold-link:hover {
+  gap: 1.1rem;
+  color: var(--gold-dark);
+}
+
+.gold-outline-button {
+  border: 1px solid var(--gold);
+  color: #44403c;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.gold-outline-button:hover {
+  background: var(--gold);
+  color: white;
+}
+
+.portfolio-card .portfolio-overlay {
+  transition: background-color 250ms ease;
+}
+
+@media (hover: hover) {
+  .portfolio-card .portfolio-overlay > div {
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition: opacity 250ms ease, transform 250ms ease;
+  }
+
+  .portfolio-card:hover .portfolio-overlay > div {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 0.95rem;
+  }
 }

@@ -1,19 +1,68 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
-
 function Stats() {
   const items = [
-    ["15+", "YEARS EXPERIENCE"],
-    ["200+", "COLLECTIONS PRODUCED"],
-    ["50+", "FASHION BRANDS"],
-    ["10+", "COUNTRIES SERVED"],
+    { end: 15, label: "YEARS EXPERIENCE" },
+    { end: 200, label: "COLLECTIONS PRODUCED" },
+    { end: 50, label: "FASHION BRANDS" },
+    { end: 10, label: "COUNTRIES SERVED" },
   ];
+  const [counts, setCounts] = useState(items.map(() => 0));
+  const ref = useRef(null);
+  const played = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !played.current) {
+            played.current = true;
+            items.forEach((it, i) => {
+              const duration = 1400;
+              const start = performance.now();
+              const step = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const value = Math.floor(progress * it.end);
+                setCounts((prev) => {
+                  const next = [...prev];
+                  next[i] = value;
+                  return next;
+                });
+                if (progress < 1) requestAnimationFrame(step);
+                else {
+                  setCounts((prev) => {
+                    const next = [...prev];
+                    next[i] = it.end;
+                    return next;
+                  });
+                }
+              };
+              requestAnimationFrame(step);
+            });
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div
+      ref={ref}
+      className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+    >
       {items.map((it, idx) => (
         <div key={idx}>
-          <div className="text-3xl font-semibold">{it[0]}</div>
-          <div className="text-xs mt-2 text-gray-500">{it[1]}</div>
+          <div className="text-4xl md:text-5xl font-semibold font-serif">
+            {counts[idx]}
+            {it.end && "+"}
+          </div>
+          <div className="text-xs mt-2 text-gray-500">{it.label}</div>
         </div>
       ))}
     </div>
@@ -60,18 +109,45 @@ function Portfolio() {
     "/images/foto4.jpg",
     "/images/foto5.jpg",
   ];
+  const labels = [
+    "EVENING WEAR",
+    "MODEST COLLECTION",
+    "RESORT WEAR",
+    "KIDS WEAR",
+    "FASHION SHOW",
+  ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-10">
-      <h3 className="text-2xl font-serif">Crafted for International Brands</h3>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6">
+      <div className="flex items-end justify-between gap-5">
+        <div>
+          <p className="section-kicker">FEATURED COLLECTIONS</p>
+          <h3 className="mt-2 text-2xl font-serif">Crafted for International Brands</h3>
+        </div>
+        <Link to="/portfolio" className="gold-link hidden sm:inline-flex">
+          VIEW ALL PORTFOLIO <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mt-6">
         {imgs.map((src, i) => (
           <div
             key={i}
-            className="h-56 md:h-48 bg-cover bg-center rounded"
-            style={{ backgroundImage: `url(${src})` }}
-          ></div>
+            className="portfolio-card relative rounded overflow-hidden h-72 sm:h-64 md:h-48"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${src})` }}
+            />
+            <div className="portfolio-overlay absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-transparent to-transparent p-4">
+              <div className="text-sm text-white">
+                {labels[i]}
+              </div>
+            </div>
+          </div>
         ))}
       </div>
+      <Link to="/portfolio" className="gold-link mt-6 inline-flex sm:hidden">
+        VIEW ALL PORTFOLIO <span aria-hidden="true">→</span>
+      </Link>
     </section>
   );
 }
