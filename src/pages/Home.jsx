@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Factory,
   Globe2,
@@ -134,7 +134,7 @@ function AdminContacts() {
   ];
 
   return (
-    <section className="admin-contact-section">
+    <section id="admin-contact" className="admin-contact-section scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16">
         <div className="text-center">
           <p className="section-kicker">TALK TO OUR TEAM</p>
@@ -496,6 +496,21 @@ function GlobalReach() {
 }
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo !== "admin-contact") return;
+
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById("admin-contact")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.key, location.state]);
+
   return (
     <div>
       <Hero />

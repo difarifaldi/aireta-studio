@@ -59,7 +59,11 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <Link to="/contact" className="quote-button ml-1">
+              <Link
+                to="/"
+                state={{ scrollTo: "admin-contact" }}
+                className="quote-button ml-1"
+              >
                 REQUEST A QUOTE
               </Link>
             </li>
@@ -79,7 +83,11 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-5">
-            <Link to="/contact" className="quote-button block text-center">
+            <Link
+              to="/"
+              state={{ scrollTo: "admin-contact" }}
+              className="quote-button block text-center"
+            >
               REQUEST A QUOTE <span aria-hidden="true">→</span>
             </Link>
           </li>

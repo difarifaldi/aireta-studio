@@ -1372,6 +1372,16 @@ button {
   font-size: 1.1rem;
 }
 
+.contact-detail-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.contact-detail:last-child .contact-detail-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
 .contact-hours {
   border-top: 1px solid #d9d2c8;
   padding-top: 1.75rem;
