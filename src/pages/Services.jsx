@@ -6,55 +6,55 @@ const services = [
     title: "Custom Design Consultation",
     description:
       "Konsultasi personal untuk menerjemahkan ide, identitas brand, dan target pasar menjadi konsep koleksi yang kuat.",
-    icon: "✦",
+    image: "fashion-desain.png",
   },
   {
     title: "Custom Pattern Design",
     description:
       "Pembuatan pola yang presisi dan disesuaikan dengan desain, ukuran, serta karakter bahan pilihan Anda.",
-    icon: "◇",
+    image: "pattern.png",
   },
   {
     title: "Custom Embroidery",
     description:
       "Detail bordir eksklusif dengan hasil rapi untuk menghadirkan ciri khas yang berkelas pada setiap produk.",
-    icon: "✣",
+    image: "embroidery.png",
   },
   {
     title: "Production",
     description:
       "Proses produksi end-to-end dengan kontrol kualitas yang konsisten, mulai dari sampel hingga produk akhir.",
-    icon: "⌁",
+    image: "production.png",
   },
   {
     title: "Photoshoot Handling",
     description:
       "Penanganan photoshoot produk dari konsep kreatif, styling, hingga visual siap digunakan untuk promosi.",
-    icon: "◎",
+    image: "photoshoot.png",
   },
   {
     title: "Video Campaign Handling",
     description:
       "Produksi video campaign yang membangun cerita brand dan menampilkan koleksi secara lebih hidup dan menarik.",
-    icon: "▷",
+    image: "video-campaign.png",
   },
   {
     title: "Custom Website",
     description:
       "Website khusus yang elegan, responsif, dan dirancang untuk memperkuat kehadiran digital bisnis fashion Anda.",
-    icon: "⌘",
+    image: "brand.png",
   },
   {
     title: "Brand Identity & Creative Direction",
     description:
       "Pengembangan identitas visual dan arah kreatif yang konsisten agar brand Anda tampil kuat, autentik, dan mudah dikenali.",
-    icon: "✧",
+    image: "brand.png",
   },
   {
     title: "Packaging & Label Design",
     description:
       "Desain kemasan, hang tag, dan label pakaian yang memperkuat karakter brand serta meningkatkan pengalaman pelanggan.",
-    icon: "▱",
+    image: "embroidery.png",
   },
 ];
 
@@ -82,23 +82,36 @@ export default function Services() {
         <div className="services-grid">
           {services.map((service, index) => (
             <article className="service-card" key={service.title}>
-              <div className="flex items-start justify-between">
-                <span className="service-icon" aria-hidden="true">
-                  {service.icon}
-                </span>
+              <div className="service-card-image">
+                <img
+                  className="service-card-image-bg"
+                  src={`${import.meta.env.BASE_URL}images/${service.image}`}
+                  alt=""
+                  aria-hidden="true"
+                />
+                <img
+                  className="service-card-image-main"
+                  src={`${import.meta.env.BASE_URL}images/${service.image}`}
+                  alt={service.title}
+                  loading="lazy"
+                />
+                <span className="service-card-image-shade" />
                 <span className="service-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h2 className="mt-8 font-serif text-2xl leading-snug">
-                {service.title}
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-stone-600">
-                {service.description}
-              </p>
-              <Link to="/contact" className="service-link">
-                DISCUSS THIS SERVICE <span aria-hidden="true">→</span>
-              </Link>
+              <div className="service-card-content">
+                <p className="service-card-kicker">AIRETA SERVICE</p>
+                <h2 className="mt-2 font-serif text-2xl leading-snug">
+                  {service.title}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-stone-600">
+                  {service.description}
+                </p>
+                <Link to="/contact" className="service-link">
+                  DISCUSS THIS SERVICE <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </article>
           ))}
         </div>

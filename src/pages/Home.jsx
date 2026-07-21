@@ -517,7 +517,7 @@ export default function Home() {
       <section className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8 items-center">
           <img
-            src={`${import.meta.env.BASE_URL}images/factory-landscape.jpg`}
+            src={`${import.meta.env.BASE_URL}images/factory-landscape.png`}
             alt="factory"
             className="rounded"
           />

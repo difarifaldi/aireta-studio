@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="hero-editorial-inner mx-auto max-w-6xl px-5 sm:px-6">
         <div className="hero-editorial-image">
           <img
-            src={`${import.meta.env.BASE_URL}images/main-landscape.jpg`}
+            src={`${import.meta.env.BASE_URL}images/main-landscape.png`}
             alt="Aireta fashion collection and manufacturing display"
           />
           <span className="hero-image-shade" />
