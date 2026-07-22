@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { title: "Sculpted Elegance", category: "Evening Wear", location: "Jakarta", image: "foto1.jpg", size: "tall" },
-  { title: "Quiet Silhouettes", category: "Modest Wear", location: "Bekasi", image: "foto2.jpg", size: "standard" },
-  { title: "Coastal Form", category: "Resort Wear", location: "Bali", image: "foto3.jpg", size: "wide" },
-  { title: "Little Reverie", category: "Kids Wear", location: "Surabaya", image: "foto4.jpg", size: "standard" },
-  { title: "Runway No. 05", category: "Evening Wear", location: "Singapore", image: "foto5.jpg", size: "tall" },
-  { title: "Modern Heritage", category: "Modest Wear", location: "Kuala Lumpur", image: "foto6.jpg", size: "wide" },
-  { title: "Essential Tailoring", category: "Ready to Wear", location: "Jakarta", image: "foto7.jpg", size: "standard" },
-  { title: "Earth & Thread", category: "Ready to Wear", location: "Yogyakarta", image: "foto8.jpg", size: "standard" },
-  { title: "After Dark", category: "Evening Wear", location: "Dubai", image: "foto9.jpg", size: "wide" },
+  { title: "Modest Wear (Basic)", image: "foto1.jpg", size: "tall" },
+  {
+    title: "Modest Wear (Pattern Printing)",
+    image: "foto2.jpg",
+    size: "standard",
+  },
+  { title: "Abaya", image: "foto10.jpg", size: "wide" },
+  { title: "Kidswear", image: "foto4.jpg", size: "standard" },
+  { title: "Manwear", image: "foto5.jpg", size: "tall" },
+  { title: "Sarimbit", image: "foto11.jpg", size: "wide" },
+  { title: "Hijab", image: "foto6.jpg", size: "standard" },
+  { title: "Embroidery", image: "foto8.jpg", size: "wide" },
+  { title: "Custom Collection", image: "foto9.jpg", size: "tall" },
 ];
 
 export default function Portfolio() {
@@ -42,13 +46,17 @@ export default function Portfolio() {
               </h1>
             </div>
             <div className="md:justify-self-end">
-              <p className="max-w-md text-sm leading-7 text-stone-600">Every project reflects a collaborative journey, combining creativity, craftsmanship, and attention to detail to bring each brand's vision to life.</p>
+              <p className="max-w-md text-sm leading-7 text-stone-600">
+                Every project reflects a collaborative journey, combining
+                creativity, craftsmanship, and attention to detail to bring each
+                brand's vision to life.
+              </p>
               <div className="mt-6 flex items-center gap-4">
-                <span className="font-serif text-3xl text-gold">08</span>
+                <span className="h-px w-12 bg-[#b08d57]" aria-hidden="true" />
                 <span className="text-[10px] leading-5 tracking-[0.15em] text-stone-500">
-                  FEATURED
+                  CREATIVE DIRECTION · DEVELOPMENT
                   <br />
-                  PROJECTS
+                  CRAFTSMANSHIP · PRODUCTION
                 </span>
               </div>
             </div>
@@ -59,13 +67,25 @@ export default function Portfolio() {
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
         <div className="portfolio-gallery">
           {projects.map((project, index) => (
-            <button type="button" className={`portfolio-project portfolio-project-${project.size}`} key={project.title} onClick={() => setSelected(project)} aria-label={`View ${project.title}`}>
-              <img src={`${import.meta.env.BASE_URL}images/${project.image}`} alt={project.title} loading="lazy" />
+            <button
+              type="button"
+              className={`portfolio-project portfolio-project-${project.size}`}
+              key={project.title}
+              onClick={() => setSelected(project)}
+              aria-label={`View ${project.title}`}
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}images/${project.image}`}
+                alt={project.title}
+                loading="lazy"
+              />
               <span className="portfolio-project-shade" />
-              <span className="portfolio-project-index">{String(index + 1).padStart(2, "0")}</span>
+              <span className="portfolio-project-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <span className="portfolio-project-info">
                 <span className="portfolio-project-category">
-                  {project.category} · {project.location}
+                  SELECTED COLLECTION
                 </span>
                 <span className="portfolio-project-title">{project.title}</span>
                 <span className="portfolio-project-view">
@@ -80,9 +100,13 @@ export default function Portfolio() {
       <section className="portfolio-closing">
         <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-6 sm:py-20">
           <p className="section-kicker">YOUR COLLECTION COULD BE NEXT</p>
-          <h2 className="mt-4 font-serif text-3xl sm:text-4xl">Ready to Build Your Brand?</h2>
+          <h2 className="mt-4 font-serif text-3xl sm:text-4xl">
+            Ready to Build Your Brand?
+          </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-stone-600">
-            Whether you're starting from an idea or refining an existing concept, we're here to help bring your vision to life with creative and production solutions tailored to your brand.
+            Whether you're starting from an idea or refining an existing
+            concept, we're here to help bring your vision to life with creative
+            and production solutions tailored to your brand.
           </p>
           <Link to="/contact" className="services-cta-button mt-8 inline-flex">
             START YOUR PROJECT <span aria-hidden="true">→</span>
@@ -91,19 +115,42 @@ export default function Portfolio() {
       </section>
 
       {selected && (
-        <div className="portfolio-lightbox" role="dialog" aria-modal="true" aria-label={selected.title} onClick={() => setSelected(null)}>
-          <button type="button" className="portfolio-lightbox-close" aria-label="Close project" onClick={() => setSelected(null)}>
+        <div
+          className="portfolio-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.title}
+          onClick={() => setSelected(null)}
+        >
+          <button
+            type="button"
+            className="portfolio-lightbox-close"
+            aria-label="Close project"
+            onClick={() => setSelected(null)}
+          >
             ×
           </button>
-          <div className="portfolio-lightbox-inner" onClick={(event) => event.stopPropagation()}>
-            <img src={`${import.meta.env.BASE_URL}images/${selected.image}`} alt={selected.title} />
+          <div
+            className="portfolio-lightbox-inner"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}images/${selected.image}`}
+              alt={selected.title}
+            />
             <div className="portfolio-lightbox-copy">
-              <p className="section-kicker">
-                {selected.category} · {selected.location}
-              </p>
+              <p className="section-kicker">SELECTED COLLECTION</p>
               <h2 className="mt-3 font-serif text-3xl">{selected.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-stone-600">Creative development, sampling, and production by Aireta Studio. Every detail was thoughtfully developed to reflect the collection&apos;s identity.</p>
-              <Link to="/contact" className="gold-link mt-6 inline-flex" onClick={() => setSelected(null)}>
+              <p className="mt-4 text-sm leading-7 text-stone-600">
+                Creative development, sampling, and production by Aireta Studio.
+                Every detail was thoughtfully developed to reflect the
+                collection&apos;s identity.
+              </p>
+              <Link
+                to="/contact"
+                className="gold-link mt-6 inline-flex"
+                onClick={() => setSelected(null)}
+              >
                 CREATE A SIMILAR PROJECT <span aria-hidden="true">→</span>
               </Link>
             </div>
