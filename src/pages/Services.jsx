@@ -5,42 +5,42 @@ const services = [
   {
     title: "Brand Identity & Creative Direction",
     description: "Every successful brand begins with a clear identity. We create thoughtful visual identities and creative strategies that communicate your story with clarity, consistency, and purpose.",
-    icon: "✦",
+    image: "brand.png",
   },
   {
     title: "Fashion Design Consultation",
     description: "From concept exploration to collection planning, we help shape products that reflect your brand identity and market vision.",
-    icon: "◇",
+    image: "fashion.png",
   },
   {
     title: "Pattern Development",
     description: "Precision-crafted patterns designed for exceptional fit, efficient production, and consistent quality.",
-    icon: "✣",
+    image: "pattern.png",
   },
   {
     title: "Custom Embroidery",
     description: "Premium embroidery solutions that add distinctive detail, refined craftsmanship, and lasting value to every product.",
-    icon: "⌁",
+    image: "custom.png",
   },
   {
     title: "Production",
     description: "From sampling to full-scale production, we ensure consistent quality, precision, and reliable craftsmanship at every stage.",
-    icon: "✧",
+    image: "production.png",
   },
   {
     title: "Photoshoot Production",
     description: "From creative direction and styling to on-set coordination, we produce compelling visuals that showcase your brand at its best.",
-    icon: "◎",
+    image: "photoshoot.png",
   },
   {
     title: "Video Campaign Production",
     description: "We produce engaging campaign videos that tell your brand story and showcase your products across digital platforms.",
-    icon: "▷",
+    image: "video-campaign.png",
   },
   {
     title: "Website Design & Development",
     description: "We design and develop responsive websites that strengthen your online presence and create a seamless digital experience for your customers.",
-    icon: "⌘",
+    image: "brand.png",
   },
 ];
 
@@ -66,17 +66,23 @@ export default function Services() {
         <div className="services-grid">
           {services.map((service, index) => (
             <article className="service-card" key={service.title}>
-              <div className="flex items-start justify-between">
-                <span className="service-icon" aria-hidden="true">
-                  {service.icon}
-                </span>
+              <div className="service-card-image">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${service.image}`}
+                  alt={service.title}
+                  loading="lazy"
+                />
+                <span className="service-card-image-overlay" />
                 <span className="service-number">{String(index + 1).padStart(2, "0")}</span>
               </div>
-              <h2 className="mt-8 font-serif text-2xl leading-snug">{service.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-stone-600">{service.description}</p>
-              <Link to="/contact" className="service-link">
-                DISCUSS THIS SERVICE <span aria-hidden="true">→</span>
-              </Link>
+              <div className="service-card-content">
+                <p className="service-card-kicker">AIRETA SERVICE</p>
+                <h2 className="mt-2 font-serif text-2xl leading-snug">{service.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-stone-600">{service.description}</p>
+                <Link to="/contact" className="service-link">
+                  DISCUSS THIS SERVICE <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </article>
           ))}
         </div>
