@@ -41,6 +41,11 @@ jobs:
       - name: Build website
         run: npm run build
 
+      # GitHub Pages tidak memiliki rewrite SPA. Salinan ini membuat URL seperti
+      # /aireta-studio/portfolio tetap memuat React saat dibuka atau di-refresh.
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 
