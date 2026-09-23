@@ -188,7 +188,7 @@ function Portfolio() {
     `${import.meta.env.BASE_URL}images/foto1.jpg`,
     `${import.meta.env.BASE_URL}images/foto2.jpg`,
     `${import.meta.env.BASE_URL}images/foto3.jpg`,
-    `${import.meta.env.BASE_URL}images/kids/kids12.JPG`,
+    `${import.meta.env.BASE_URL}images/kids/kids12.webp`,
     `${import.meta.env.BASE_URL}images/foto5.jpg`,
   ];
   const labels = [

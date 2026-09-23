@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/generate-seo-pages.mjs",
-    "optimize:kids": "node scripts/optimize-kids-images.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "optimize:kids": "node scripts/optimize-images.mjs kids",
     "preview": "vite preview"
   },
   "dependencies": {
