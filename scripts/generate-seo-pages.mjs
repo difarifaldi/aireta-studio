@@ -44,6 +44,13 @@ const pages = [
     image: `${siteUrl}/images/patern/patern1.webp`,
   },
   {
+    route: "portfolio/serambit",
+    title: "Serambit Collection & Manufacturing | Aireta Studio",
+    description:
+      "Explore Aireta Studio's Serambit collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/serambit/serambit1.webp`,
+  },
+  {
     route: "contact",
     title: "Contact Aireta Studio | Fashion & Production Consultation",
     description:

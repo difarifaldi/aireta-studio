@@ -28,7 +28,12 @@ const projects = [
     size: "standard",
     collection: "pattern",
   },
-  { title: "Sarimbit", image: "foto11.jpg", size: "wide" },
+  {
+    title: "Serambit",
+    image: "serambit/serambit2.webp",
+    size: "wide",
+    collection: "serambit",
+  },
   { title: "Embroidery", image: "foto8.jpg", size: "wide" },
   { title: "Custom Collection", image: "foto9.jpg", size: "tall" },
 ];
@@ -61,6 +66,10 @@ export default function Portfolio() {
     }
     if (project.collection === "pattern") {
       navigate("/portfolio/pattern");
+      return;
+    }
+    if (project.collection === "serambit") {
+      navigate("/portfolio/serambit");
       return;
     }
     setSelected(project);
