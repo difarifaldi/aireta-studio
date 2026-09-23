@@ -6,6 +6,7 @@ import LoadingScreen from "./components/LoadingScreen";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
+import Kidswear from "./pages/Kidswear";
 
 export default function App() {
   const [showLoading, setShowLoading] = useState(
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/our-services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/kidswear" element={<Kidswear />} />
           <Route
             path="/location"
             element={<div className="p-20">Location (placeholder)</div>}

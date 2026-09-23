@@ -1053,6 +1053,71 @@ button {
   font-weight: 200;
 }
 
+.kidswear-page {
+  background: #fcfbf8;
+}
+
+.kidswear-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e5ded4;
+  background: radial-gradient(circle at 88% 25%, rgba(176, 141, 87, 0.2), transparent 23rem), linear-gradient(135deg, #fff 0%, #f5efe5 100%);
+}
+
+.kidswear-hero::after {
+  content: "";
+  position: absolute;
+  right: -7rem;
+  bottom: -13rem;
+  width: 28rem;
+  height: 28rem;
+  border: 1px solid rgba(176, 141, 87, 0.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.kidswear-back-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #74634c;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  transition: gap 200ms ease, color 200ms ease;
+}
+
+.kidswear-back-link:hover {
+  gap: 1rem;
+  color: var(--gold-dark);
+}
+
+.kidswear-gallery-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd4c7;
+}
+
+.kidswear-gallery-heading > p:last-child {
+  color: #8a8278;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+}
+
+.kidswear-page-grid {
+  padding: 0;
+  background: transparent;
+}
+
+.kidswear-page-grid .kids-collection-item:nth-child(5n + 1) {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
 @media (max-width: 767px) {
   .collection-modal {
     padding: 1rem;
@@ -1064,6 +1129,11 @@ button {
 
   .kids-collection-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kidswear-page-grid .kids-collection-item:nth-child(5n + 1) {
+    grid-row: auto;
+    aspect-ratio: 3 / 4;
   }
 
   .portfolio-gallery {

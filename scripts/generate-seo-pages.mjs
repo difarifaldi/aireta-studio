@@ -21,6 +21,12 @@ const pages = [
     image: `${siteUrl}/images/foto1.jpg`,
   },
   {
+    route: "portfolio/kidswear",
+    title: "Kidswear Collection & Manufacturing | Aireta Studio",
+    description: "Explore Aireta Studio's Kidswear collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/kids/kids12.webp`,
+  },
+  {
     route: "contact",
     title: "Contact Aireta Studio | Fashion & Production Consultation",
     description: "Contact Aireta Studio in Bekasi to discuss fashion design, garment production, embroidery, branding, creative campaigns, and digital services.",
