@@ -4,17 +4,25 @@ import Seo, { SITE_URL } from "../components/Seo";
 
 const projects = [
   { title: "Modest Wear (Basic)", image: "foto1.jpg", size: "tall" },
-  {
-    title: "Modest Wear (Pattern Printing)",
-    image: "foto2.jpg",
-    size: "standard",
-  },
-  { title: "Abaya", image: "foto10.jpg", size: "wide" },
+
+  { title: "Prayer", image: "foto10.jpg", size: "wide" },
   {
     title: "Kidswear",
     image: "kids/kids12.webp",
     size: "standard",
     collection: "kids",
+  },
+  {
+    title: "Dresses",
+    image: "dresses/dresses1.webp",
+    size: "standard",
+    collection: "dresses",
+  },
+  {
+    title: "Hijab",
+    image: "hijab/hijab1.webp",
+    size: "standard",
+    collection: "hijab",
   },
   {
     title: "Manwear",
@@ -35,7 +43,6 @@ const projects = [
     collection: "serambit",
   },
   { title: "Embroidery", image: "foto8.jpg", size: "wide" },
-  { title: "Custom Collection", image: "foto9.jpg", size: "tall" },
 ];
 
 export default function Portfolio() {
@@ -70,6 +77,14 @@ export default function Portfolio() {
     }
     if (project.collection === "serambit") {
       navigate("/portfolio/serambit");
+      return;
+    }
+    if (project.collection === "dresses") {
+      navigate("/portfolio/dresses");
+      return;
+    }
+    if (project.collection === "hijab") {
+      navigate("/portfolio/hijab");
       return;
     }
     setSelected(project);

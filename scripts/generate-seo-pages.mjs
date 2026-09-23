@@ -51,6 +51,20 @@ const pages = [
     image: `${siteUrl}/images/serambit/serambit1.webp`,
   },
   {
+    route: "portfolio/dresses",
+    title: "Dresses Collection & Manufacturing | Aireta Studio",
+    description:
+      "Explore Aireta Studio's Dresses collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/dresses/dresses1.webp`,
+  },
+  {
+    route: "portfolio/hijab",
+    title: "Hijab Collection & Manufacturing | Aireta Studio",
+    description:
+      "Explore Aireta Studio's Hijab collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/hijab/hijab1.webp`,
+  },
+  {
     route: "contact",
     title: "Contact Aireta Studio | Fashion & Production Consultation",
     description:
