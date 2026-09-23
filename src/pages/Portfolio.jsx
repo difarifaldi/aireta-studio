@@ -22,8 +22,13 @@ const projects = [
     size: "standard",
     collection: "man",
   },
+  {
+    title: "Pattern",
+    image: "patern/patern2.webp",
+    size: "standard",
+    collection: "pattern",
+  },
   { title: "Sarimbit", image: "foto11.jpg", size: "wide" },
-  { title: "Hijab", image: "foto6.jpg", size: "standard" },
   { title: "Embroidery", image: "foto8.jpg", size: "wide" },
   { title: "Custom Collection", image: "foto9.jpg", size: "tall" },
 ];
@@ -52,6 +57,10 @@ export default function Portfolio() {
     }
     if (project.collection === "man") {
       navigate("/portfolio/manwear");
+      return;
+    }
+    if (project.collection === "pattern") {
+      navigate("/portfolio/pattern");
       return;
     }
     setSelected(project);
