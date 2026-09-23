@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
 import Kidswear from "./pages/Kidswear";
 import Manwear from "./pages/Manwear";
+import Patern from "./pages/Patern";
 
 export default function App() {
   const [showLoading, setShowLoading] = useState(
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/kidswear" element={<Kidswear />} />
           <Route path="/portfolio/manwear" element={<Manwear />} />
+          <Route path="/portfolio/pattern" element={<Patern />} />
           <Route
             path="/location"
             element={<div className="p-20">Location (placeholder)</div>}

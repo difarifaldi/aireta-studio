@@ -34,7 +34,14 @@ const pages = [
     title: "Manwear Collection & Manufacturing | Aireta Studio",
     description:
       "Explore Aireta Studio's Manwear collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
-    image: `${siteUrl}/images/man/man12.webp`,
+    image: `${siteUrl}/images/man/man1.webp`,
+  },
+  {
+    route: "portfolio/pattern",
+    title: "Pattern Collection & Manufacturing | Aireta Studio",
+    description:
+      "Explore Aireta Studio's Pattern collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/patern/patern1.webp`,
   },
   {
     route: "contact",
