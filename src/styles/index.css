@@ -30,7 +30,9 @@ body {
   overflow: hidden;
   background: #0d0b08;
   opacity: 1;
-  transition: opacity 450ms ease, visibility 450ms ease;
+  transition:
+    opacity 450ms ease,
+    visibility 450ms ease;
 }
 
 .loading-screen-leaving {
@@ -43,7 +45,11 @@ body {
   width: min(70vw, 34rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(176, 141, 87, 0.18), transparent 68%);
+  background: radial-gradient(
+    circle,
+    rgba(176, 141, 87, 0.18),
+    transparent 68%
+  );
   animation: loading-glow 1.8s ease-in-out infinite;
 }
 
@@ -98,18 +104,33 @@ body {
 }
 
 @keyframes loading-copy-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes loading-line {
-  from { transform: translateX(-105%); }
-  to { transform: translateX(105%); }
+  from {
+    transform: translateX(-105%);
+  }
+  to {
+    transform: translateX(105%);
+  }
 }
 
 @keyframes loading-glow {
-  0%, 100% { opacity: 0.65; transform: scale(0.92); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 480px) {
@@ -982,28 +1003,30 @@ button {
   font-weight: 200;
 }
 
-.kids-collection-grid {
+.details-collection-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
   padding: 0.75rem;
 }
 
-.kids-collection-item {
+.details-collection-item {
   position: relative;
   overflow: hidden;
   aspect-ratio: 3 / 4;
   background: #e8e0d5;
 }
 
-.kids-collection-item img {
+.details-collection-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 300ms ease;
+  transition:
+    transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 300ms ease;
 }
 
-.kids-collection-item span {
+.details-collection-item span {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
@@ -1020,12 +1043,12 @@ button {
   backdrop-filter: blur(5px);
 }
 
-.kids-collection-item:hover img {
+.details-collection-item:hover img {
   filter: saturate(1.05);
   transform: scale(1.04);
 }
 
-.kids-image-viewer {
+.details-image-viewer {
   position: fixed;
   z-index: 70;
   inset: 0;
@@ -1035,7 +1058,7 @@ button {
   padding: 2rem;
 }
 
-.kids-image-viewer img {
+.details-image-viewer img {
   width: auto;
   max-width: min(90vw, 56rem);
   max-height: 88vh;
@@ -1043,7 +1066,7 @@ button {
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
 }
 
-.kids-image-viewer button {
+.details-image-viewer button {
   position: fixed;
   z-index: 2;
   top: 1rem;
@@ -1053,18 +1076,24 @@ button {
   font-weight: 200;
 }
 
-.kidswear-page {
+.detail-portofolio-page {
   background: #fcfbf8;
 }
 
-.kidswear-hero {
+.detail-portofolio-hero {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #e5ded4;
-  background: radial-gradient(circle at 88% 25%, rgba(176, 141, 87, 0.2), transparent 23rem), linear-gradient(135deg, #fff 0%, #f5efe5 100%);
+  background:
+    radial-gradient(
+      circle at 88% 25%,
+      rgba(176, 141, 87, 0.2),
+      transparent 23rem
+    ),
+    linear-gradient(135deg, #fff 0%, #f5efe5 100%);
 }
 
-.kidswear-hero::after {
+.detail-portofolio-hero::after {
   content: "";
   position: absolute;
   right: -7rem;
@@ -1076,7 +1105,7 @@ button {
   pointer-events: none;
 }
 
-.kidswear-back-link {
+.detail-portofolio-back-link {
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -1085,15 +1114,17 @@ button {
   color: #74634c;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
-  transition: gap 200ms ease, color 200ms ease;
+  transition:
+    gap 200ms ease,
+    color 200ms ease;
 }
 
-.kidswear-back-link:hover {
+.detail-portofolio-back-link:hover {
   gap: 1rem;
   color: var(--gold-dark);
 }
 
-.kidswear-gallery-heading {
+.detail-portofolio-gallery-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1102,18 +1133,18 @@ button {
   border-bottom: 1px solid #ddd4c7;
 }
 
-.kidswear-gallery-heading > p:last-child {
+.detail-portofolio-gallery-heading > p:last-child {
   color: #8a8278;
   font-size: 0.58rem;
   letter-spacing: 0.12em;
 }
 
-.kidswear-page-grid {
+.detail-portofolio-page-grid {
   padding: 0;
   background: transparent;
 }
 
-.kidswear-page-grid .kids-collection-item:nth-child(5n + 1) {
+.detail-portofolio-page-grid .details-collection-item:nth-child(5n + 1) {
   grid-row: span 2;
   aspect-ratio: auto;
 }
@@ -1127,11 +1158,11 @@ button {
     padding: 1.5rem;
   }
 
-  .kids-collection-grid {
+  .details-collection-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .kidswear-page-grid .kids-collection-item:nth-child(5n + 1) {
+  .detail-portofolio-page-grid .details-collection-item:nth-child(5n + 1) {
     grid-row: auto;
     aspect-ratio: 3 / 4;
   }
@@ -1548,7 +1579,9 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 350ms ease;
+  transition:
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 350ms ease;
 }
 
 .service-card:hover .service-card-image img {

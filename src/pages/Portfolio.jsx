@@ -16,7 +16,12 @@ const projects = [
     size: "standard",
     collection: "kids",
   },
-  { title: "Manwear", image: "foto5.jpg", size: "tall" },
+  {
+    title: "Manwear",
+    image: "man/man2.webp",
+    size: "standard",
+    collection: "man",
+  },
   { title: "Sarimbit", image: "foto11.jpg", size: "wide" },
   { title: "Hijab", image: "foto6.jpg", size: "standard" },
   { title: "Embroidery", image: "foto8.jpg", size: "wide" },
@@ -43,6 +48,10 @@ export default function Portfolio() {
   const openProject = (project) => {
     if (project.collection === "kids") {
       navigate("/portfolio/kidswear");
+      return;
+    }
+    if (project.collection === "man") {
+      navigate("/portfolio/manwear");
       return;
     }
     setSelected(project);
@@ -178,7 +187,6 @@ export default function Portfolio() {
           </div>
         </div>
       )}
-
     </div>
   );
 }

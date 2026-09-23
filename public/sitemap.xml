@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/manwear/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://difarifaldi.github.io/aireta-studio/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
