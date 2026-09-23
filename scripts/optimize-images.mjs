@@ -1,5 +1,5 @@
 import { access, readdir, stat } from "node:fs/promises";
-import { basename, dirname, join, parse, relative, resolve, sep } from "node:path";
+import { basename, dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
@@ -8,7 +8,13 @@ const requestedFolder = process.argv[2]?.replaceAll("\\", "/").replace(/^\/+|\/+
 const supportedImage = /\.(jpe?g|png)$/i;
 
 async function collectImages(directory) {
-  const entries = await readdir(directory, { withFileTypes: true });
+  const entries = (await readdir(directory, { withFileTypes: true })).sort(
+    (a, b) =>
+      a.name.localeCompare(b.name, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      }),
+  );
   const files = [];
 
   for (const entry of entries) {
@@ -58,10 +64,17 @@ let optimizedCount = 0;
 
 for (const directory of directories) {
   const files = await collectImages(directory);
-  console.log(`\n[${relative(imagesRoot, directory)}] ${files.length} gambar ditemukan`);
+  const folderLabel = relative(imagesRoot, directory);
+  const outputPrefix = basename(directory)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 
-  for (const source of files) {
-    const output = join(dirname(source), `${parse(source).name}.webp`);
+  console.log(`\n[${folderLabel}] ${files.length} gambar ditemukan`);
+
+  for (const [index, source] of files.entries()) {
+    const outputName = `${outputPrefix}${index + 1}.webp`;
+    const output = join(dirname(source), outputName);
     const sourceSize = (await stat(source)).size;
 
     await sharp(source)
