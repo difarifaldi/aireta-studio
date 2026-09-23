@@ -944,7 +944,128 @@ button {
   font-weight: 200;
 }
 
+.collection-modal {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  overflow-y: auto;
+  background: rgba(18, 15, 11, 0.9);
+  padding: 2.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.collection-modal-inner {
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  background: #fcfbf8;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+}
+
+.collection-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.25rem;
+  border-bottom: 1px solid #e5ded4;
+}
+
+.collection-modal-close {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #cbbda8;
+  color: #57534e;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.kids-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.kids-collection-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #e8e0d5;
+}
+
+.kids-collection-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 300ms ease;
+}
+
+.kids-collection-item span {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  background: rgba(20, 16, 11, 0.35);
+  color: white;
+  font-family: var(--serif);
+  font-size: 0.62rem;
+  backdrop-filter: blur(5px);
+}
+
+.kids-collection-item:hover img {
+  filter: saturate(1.05);
+  transform: scale(1.04);
+}
+
+.kids-image-viewer {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 8, 6, 0.94);
+  padding: 2rem;
+}
+
+.kids-image-viewer img {
+  width: auto;
+  max-width: min(90vw, 56rem);
+  max-height: 88vh;
+  object-fit: contain;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.kids-image-viewer button {
+  position: fixed;
+  z-index: 2;
+  top: 1rem;
+  right: 1.25rem;
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 200;
+}
+
 @media (max-width: 767px) {
+  .collection-modal {
+    padding: 1rem;
+  }
+
+  .collection-modal-header {
+    padding: 1.5rem;
+  }
+
+  .kids-collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .portfolio-gallery {
     grid-auto-rows: 20rem;
     grid-template-columns: 1fr 1fr;
@@ -964,6 +1085,19 @@ button {
 }
 
 @media (max-width: 520px) {
+  .collection-modal {
+    padding: 0;
+  }
+
+  .collection-modal-inner {
+    min-height: 100%;
+  }
+
+  .collection-modal-header {
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
   .portfolio-filter {
     flex-wrap: nowrap;
     overflow-x: auto;

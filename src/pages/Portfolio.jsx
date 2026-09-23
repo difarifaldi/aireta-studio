@@ -10,7 +10,12 @@ const projects = [
     size: "standard",
   },
   { title: "Abaya", image: "foto10.jpg", size: "wide" },
-  { title: "Kidswear", image: "foto4.jpg", size: "standard" },
+  {
+    title: "Kidswear",
+    image: "kids/kids12.JPG",
+    size: "standard",
+    collection: "kids",
+  },
   { title: "Manwear", image: "foto5.jpg", size: "tall" },
   { title: "Sarimbit", image: "foto11.jpg", size: "wide" },
   { title: "Hijab", image: "foto6.jpg", size: "standard" },
@@ -18,21 +23,43 @@ const projects = [
   { title: "Custom Collection", image: "foto9.jpg", size: "tall" },
 ];
 
+const kidsCollection = [
+  "kids1.jpg",
+  ...Array.from({ length: 13 }, (_, index) => `kids${index + 2}.JPG`),
+];
+
 export default function Portfolio() {
   const [selected, setSelected] = useState(null);
+  const [selectedCollection, setSelectedCollection] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const isOverlayOpen = selected || selectedCollection || selectedImage;
 
   useEffect(() => {
-    document.body.style.overflow = selected ? "hidden" : "";
+    document.body.style.overflow = isOverlayOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [selected]);
+  }, [isOverlayOpen]);
 
   useEffect(() => {
-    const close = (event) => event.key === "Escape" && setSelected(null);
+    const close = (event) => {
+      if (event.key !== "Escape") return;
+      if (selectedImage) setSelectedImage(null);
+      else if (selectedCollection) setSelectedCollection(null);
+      else setSelected(null);
+    };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
-  }, []);
+  }, [selectedCollection, selectedImage]);
+
+  const openProject = (project) => {
+    if (project.collection === "kids") {
+      setSelectedCollection(project);
+      return;
+    }
+    setSelected(project);
+  };
 
   return (
     <div className="portfolio-page">
@@ -78,7 +105,7 @@ export default function Portfolio() {
               type="button"
               className={`portfolio-project portfolio-project-${project.size}`}
               key={project.title}
-              onClick={() => setSelected(project)}
+              onClick={() => openProject(project)}
               aria-label={`View ${project.title}`}
             >
               <img
@@ -162,6 +189,84 @@ export default function Portfolio() {
               </Link>
             </div>
           </div>
+        </div>
+      )}
+
+      {selectedCollection && (
+        <div
+          className="collection-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Kidswear collection"
+          onClick={() => setSelectedCollection(null)}
+        >
+          <div
+            className="collection-modal-inner"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <header className="collection-modal-header">
+              <div>
+                <p className="section-kicker">SELECTED COLLECTION</p>
+                <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
+                  Kidswear Collection
+                </h2>
+                <p className="mt-3 max-w-xl text-sm leading-6 text-stone-600">
+                  Explore our playful silhouettes, thoughtful details, and
+                  comfortable pieces created especially for children.
+                </p>
+              </div>
+              <button
+                type="button"
+                className="collection-modal-close"
+                aria-label="Close Kidswear collection"
+                onClick={() => setSelectedCollection(null)}
+              >
+                ×
+              </button>
+            </header>
+
+            <div className="kids-collection-grid">
+              {kidsCollection.map((image, index) => (
+                <button
+                  type="button"
+                  className="kids-collection-item"
+                  key={image}
+                  onClick={() => setSelectedImage(image)}
+                  aria-label={`View Kidswear photo ${index + 1}`}
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/kids/${image}`}
+                    alt={`Aireta Kidswear collection ${index + 1}`}
+                    loading="lazy"
+                  />
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedImage && (
+        <div
+          className="kids-image-viewer"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Kidswear photo preview"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close photo preview"
+            onClick={() => setSelectedImage(null)}
+          >
+            ×
+          </button>
+          <img
+            src={`${import.meta.env.BASE_URL}images/kids/${selectedImage}`}
+            alt="Aireta Kidswear collection preview"
+            onClick={(event) => event.stopPropagation()}
+          />
         </div>
       )}
     </div>
