@@ -39,9 +39,9 @@ const projects = [
     collection: "basic",
   },
 
-  { title: "Modest Wear (Basic)", image: "foto1.jpg" },
+  { title: "Prayer Set", image: "coming.png", collection: "prayer" },
 
-  { title: "Prayer", image: "foto10.jpg" },
+  { title: "Embroidery", image: "coming.png", collection: "embroidery" },
 ];
 
 export default function Portfolio() {
@@ -88,6 +88,12 @@ export default function Portfolio() {
     }
     if (project.collection === "basic") {
       navigate("/portfolio/basic");
+      return;
+    }
+    if (project.collection === "prayer") {
+      return;
+    }
+    if (project.collection === "embroidery") {
       return;
     }
     setSelected(project);
@@ -195,7 +201,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {selected && (
+      {/* {selected && (
         <div
           className="portfolio-lightbox"
           role="dialog"
@@ -237,7 +243,7 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
