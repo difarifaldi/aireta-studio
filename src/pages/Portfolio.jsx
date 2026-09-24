@@ -127,12 +127,24 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
-        <div className="portfolio-gallery">
+      <section className="portfolio-showcase">
+        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
+          <div className="portfolio-showcase-heading">
+            <div>
+              <p className="section-kicker">CURATED COLLECTIONS</p>
+              <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+                Crafted Across Categories
+              </h2>
+            </div>
+            <p>
+              09 COLLECTIONS <span aria-hidden="true">—</span> EXPLORE OUR WORK
+            </p>
+          </div>
+          <div className="portfolio-gallery">
           {projects.map((project, index) => (
             <button
               type="button"
-              className={`portfolio-project portfolio-project-${project.size}`}
+              className="portfolio-project"
               key={project.title}
               onClick={() => openProject(project)}
               aria-label={`View ${project.title}`}
@@ -157,6 +169,7 @@ export default function Portfolio() {
               </span>
             </button>
           ))}
+          </div>
         </div>
       </section>
 
