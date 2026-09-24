@@ -3,46 +3,45 @@ import { Link, useNavigate } from "react-router-dom";
 import Seo, { SITE_URL } from "../components/Seo";
 
 const projects = [
-  { title: "Modest Wear (Basic)", image: "foto1.jpg", size: "tall" },
-
-  { title: "Prayer", image: "foto10.jpg", size: "wide" },
   {
     title: "Kidswear",
     image: "kids/kids12.webp",
-    size: "standard",
     collection: "kids",
   },
   {
     title: "Dresses",
     image: "dresses/dresses1.webp",
-    size: "standard",
     collection: "dresses",
   },
   {
     title: "Hijab",
     image: "hijab/hijab1.webp",
-    size: "standard",
     collection: "hijab",
   },
   {
     title: "Manwear",
     image: "man/man2.webp",
-    size: "standard",
     collection: "man",
   },
   {
     title: "Pattern Printing",
     image: "patern/patern2.webp",
-    size: "standard",
     collection: "pattern",
   },
   {
     title: "Serambit",
     image: "serambit/serambit2.webp",
-    size: "wide",
     collection: "serambit",
   },
-  { title: "Embroidery", image: "foto8.jpg", size: "wide" },
+  {
+    title: "Basic Wear",
+    image: "basic/basic20.webp",
+    collection: "basic",
+  },
+
+  { title: "Modest Wear (Basic)", image: "foto1.jpg" },
+
+  { title: "Prayer", image: "foto10.jpg" },
 ];
 
 export default function Portfolio() {
@@ -85,6 +84,10 @@ export default function Portfolio() {
     }
     if (project.collection === "hijab") {
       navigate("/portfolio/hijab");
+      return;
+    }
+    if (project.collection === "basic") {
+      navigate("/portfolio/basic");
       return;
     }
     setSelected(project);

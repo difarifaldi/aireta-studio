@@ -64,6 +64,14 @@ const pages = [
       "Explore Aireta Studio's Hijab collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
     image: `${siteUrl}/images/hijab/hijab1.webp`,
   },
+
+  {
+    route: "portfolio/basic",
+    title: "Basic wear Collection & Manufacturing | Aireta Studio",
+    description:
+      "Explore Aireta Studio's Basic wear collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/basic/hijab1.webp`,
+  },
   {
     route: "contact",
     title: "Contact Aireta Studio | Fashion & Production Consultation",

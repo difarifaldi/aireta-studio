@@ -12,6 +12,7 @@ import Patern from "./pages/Patern";
 import Serambit from "./pages/Serambit";
 import Hijab from "./pages/Hijab";
 import Dresses from "./pages/Dresses";
+import Basic from "./pages/Basic";
 
 export default function App() {
   const [showLoading, setShowLoading] = useState(
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/portfolio/serambit" element={<Serambit />} />
           <Route path="/portfolio/hijab" element={<Hijab />} />
           <Route path="/portfolio/dresses" element={<Dresses />} />
+          <Route path="/portfolio/basic" element={<Basic />} />
           <Route
             path="/location"
             element={<div className="p-20">Location (placeholder)</div>}

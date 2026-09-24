@@ -185,19 +185,13 @@ function AdminContacts() {
 
 function Portfolio() {
   const imgs = [
-    `${import.meta.env.BASE_URL}images/foto1.jpg`,
-    `${import.meta.env.BASE_URL}images/foto2.jpg`,
-    `${import.meta.env.BASE_URL}images/foto3.jpg`,
-    `${import.meta.env.BASE_URL}images/kids/kids12.webp`,
-    `${import.meta.env.BASE_URL}images/foto5.jpg`,
+    `${import.meta.env.BASE_URL}images/basic/basic21.webp`,
+    `${import.meta.env.BASE_URL}images/serambit/serambit3.webp`,
+    `${import.meta.env.BASE_URL}images/man/man3.webp`,
+    `${import.meta.env.BASE_URL}images/kids/kids3.webp`,
+    `${import.meta.env.BASE_URL}images/dresses/dresses9.webp`,
   ];
-  const labels = [
-    "EVENING WEAR",
-    "MODEST COLLECTION",
-    "RESORT WEAR",
-    "KIDS WEAR",
-    "FASHION SHOW",
-  ];
+  const labels = ["BASIC WEAR", "SERAMBIT", "MAN WEAR", "KIDS WEAR", "HIJAB"];
   return (
     <section className="max-w-6xl mx-auto px-6 py-10">
       <div className="flex items-end justify-between gap-5">
