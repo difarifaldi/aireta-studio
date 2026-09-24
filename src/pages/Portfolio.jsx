@@ -31,7 +31,7 @@ const projects = [
     collection: "man",
   },
   {
-    title: "Pattern",
+    title: "Pattern Printing",
     image: "patern/patern2.webp",
     size: "standard",
     collection: "pattern",
@@ -141,34 +141,36 @@ export default function Portfolio() {
             </p>
           </div>
           <div className="portfolio-gallery">
-          {projects.map((project, index) => (
-            <button
-              type="button"
-              className="portfolio-project"
-              key={project.title}
-              onClick={() => openProject(project)}
-              aria-label={`View ${project.title}`}
-            >
-              <img
-                src={`${import.meta.env.BASE_URL}images/${project.image}`}
-                alt={project.title}
-                loading="lazy"
-              />
-              <span className="portfolio-project-shade" />
-              <span className="portfolio-project-index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="portfolio-project-info">
-                <span className="portfolio-project-category">
-                  SELECTED COLLECTION
+            {projects.map((project, index) => (
+              <button
+                type="button"
+                className="portfolio-project"
+                key={project.title}
+                onClick={() => openProject(project)}
+                aria-label={`View ${project.title}`}
+              >
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${project.image}`}
+                  alt={project.title}
+                  loading="lazy"
+                />
+                <span className="portfolio-project-shade" />
+                <span className="portfolio-project-index">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="portfolio-project-title">{project.title}</span>
-                <span className="portfolio-project-view">
-                  VIEW PROJECT <i>↗</i>
+                <span className="portfolio-project-info">
+                  <span className="portfolio-project-category">
+                    SELECTED COLLECTION
+                  </span>
+                  <span className="portfolio-project-title">
+                    {project.title}
+                  </span>
+                  <span className="portfolio-project-view">
+                    VIEW PROJECT <i>↗</i>
+                  </span>
                 </span>
-              </span>
-            </button>
-          ))}
+              </button>
+            ))}
           </div>
         </div>
       </section>

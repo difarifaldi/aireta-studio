@@ -7,7 +7,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
 import Kidswear from "./pages/Kidswear";
-import Menswear from "./pages/Menswear";
+import Manwear from "./pages/Manwear";
 import Patern from "./pages/Patern";
 import Serambit from "./pages/Serambit";
 import Hijab from "./pages/Hijab";
@@ -33,7 +33,7 @@ export default function App() {
           <Route path="/our-services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/kidswear" element={<Kidswear />} />
-          <Route path="/portfolio/manwear" element={<Menswear />} />
+          <Route path="/portfolio/manwear" element={<Manwear />} />
           <Route path="/portfolio/pattern" element={<Patern />} />
           <Route path="/portfolio/serambit" element={<Serambit />} />
           <Route path="/portfolio/hijab" element={<Hijab />} />

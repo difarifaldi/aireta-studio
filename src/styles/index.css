@@ -825,8 +825,7 @@ button {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(176, 141, 87, 0.045) 1px, transparent 1px),
-    #fcfbf8;
+    linear-gradient(rgba(176, 141, 87, 0.045) 1px, transparent 1px), #fcfbf8;
   background-size: 100% 11rem;
 }
 
@@ -859,7 +858,9 @@ button {
   border: 1px solid rgba(176, 141, 87, 0.2);
   box-shadow: 0 12px 30px rgba(58, 43, 24, 0.1);
   text-align: left;
-  transition: box-shadow 300ms ease, transform 300ms ease;
+  transition:
+    box-shadow 300ms ease,
+    transform 300ms ease;
 }
 
 .portfolio-project:nth-child(3n + 2) {
@@ -874,7 +875,9 @@ button {
   inset: 0.65rem;
   border: 1px solid rgba(255, 255, 255, 0.28);
   pointer-events: none;
-  transition: inset 300ms ease, border-color 300ms ease;
+  transition:
+    inset 300ms ease,
+    border-color 300ms ease;
 }
 
 .portfolio-project:hover {
@@ -1211,6 +1214,11 @@ button {
 .detail-portofolio-page-grid .details-collection-item:nth-child(5n + 1) {
   grid-row: span 2;
   aspect-ratio: auto;
+}
+.detail-portofolio-page-grid
+  .details-collection-item.details-collection-item-last-row {
+  grid-row: auto;
+  aspect-ratio: 3 / 4;
 }
 
 @media (max-width: 767px) {
