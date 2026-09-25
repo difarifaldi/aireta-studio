@@ -30,6 +30,12 @@ const pages = [
     image: `${siteUrl}/images/kids/kids12.webp`,
   },
   {
+    route: "videos",
+    title: "Fashion Videos & Campaign Showcase | Aireta Studio",
+    description: "Explore Aireta Studio fashion campaigns, production processes, garment details, promotional videos, and behind-the-scenes stories.",
+    image: `${siteUrl}/images/video-posters/promotion1.webp`,
+  },
+  {
     route: "portfolio/manwear",
     title: "Manwear Collection & Manufacturing | Aireta Studio",
     description:

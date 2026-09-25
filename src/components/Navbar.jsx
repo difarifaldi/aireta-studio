@@ -5,12 +5,13 @@ const links = [
   ["/", "HOME"],
   ["/our-services", "OUR SERVICES"],
   ["/portfolio", "PORTFOLIO"],
+  ["/videos", "VIDEOS"],
   ["/contact", "CONTACT US"],
 ];
 
 function NavLink({ to, children, onClick }) {
   const { pathname } = useLocation();
-  const active = pathname === to;
+  const active = pathname === to || (to !== "/" && pathname.startsWith(`${to}/`));
 
   return (
     <Link
