@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Hero from "../components/Hero";
 import Seo, { SITE_URL } from "../components/Seo";
+import VideoStorySection from "../components/VideoStorySection";
 function Stats() {
   const items = [
     { end: 15, label: "YEARS EXPERIENCE" },
@@ -562,7 +563,35 @@ export default function Home() {
       <Portfolio />
       <CustomerFeedback />
 
+      <VideoStorySection
+        kicker="BRAND STORY"
+        title="A Voice Behind the Vision"
+        description="Hear the story, purpose, and perspective that shape a brand beyond the finished collection."
+        videos={[
+          {
+            id: "campaign1",
+            title: "Voices of the Brand",
+            category: "Campaign",
+            description: "An authentic story shared through a focused campaign conversation.",
+          },
+        ]}
+      />
+
       <ProductionJourney />
+      <VideoStorySection
+        kicker="BEHIND THE SCENES"
+        title="Where Every Piece Comes to Life"
+        description="Step inside the making process and meet the craftsmanship, care, and people behind every garment."
+        tone="warm"
+        videos={[
+          {
+            id: "behind1",
+            title: "Behind the Craft",
+            category: "Behind the Scenes",
+            description: "A closer look at the people and craft behind every piece.",
+          },
+        ]}
+      />
       <GlobalReach />
 
       <AdminContacts />

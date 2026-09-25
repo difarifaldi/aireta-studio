@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import VideoStorySection from "../components/VideoStorySection";
 
 const services = [
   {
@@ -93,6 +94,74 @@ export default function Services() {
           ))}
         </div>
       </section>
+
+      <VideoStorySection
+        kicker="MATERIAL & QUALITY"
+        title="Details You Can See and Feel"
+        description="Explore the fabric, texture, and finishing details that define the quality of a finished garment."
+        tone="warm"
+        videos={[
+          {
+            id: "detail1",
+            title: "Textile in Detail",
+            category: "Detail",
+            description: "Fabric, texture, and finishing details captured up close.",
+          },
+        ]}
+      />
+
+      <VideoStorySection
+        kicker="INSIDE OUR PRODUCTION"
+        title="From Preparation to Production"
+        description="Follow the thoughtful stages behind each garment—from precise cutting and sampling to careful construction."
+        videos={[
+          {
+            id: "process1",
+            title: "The Cutting Process",
+            category: "Process",
+            description: "Precision cutting as the first step toward a refined garment.",
+          },
+          {
+            id: "process2",
+            title: "Sampling in Motion",
+            category: "Process",
+            description: "Transforming an initial design into a production-ready sample.",
+          },
+          {
+            id: "process3",
+            title: "Crafted Step by Step",
+            category: "Process",
+            description: "A glimpse into the thoughtful stages of garment production.",
+          },
+        ]}
+      />
+
+      <VideoStorySection
+        kicker="VIDEO CAMPAIGN HANDLING"
+        title="Products Presented with Purpose"
+        description="We turn product strengths into clear, compelling promotional stories designed for digital audiences."
+        tone="warm"
+        videos={[
+          {
+            id: "promotion1",
+            title: "Why This Collection",
+            category: "Promotion",
+            description: "Introducing the values and ideas behind the product.",
+          },
+          {
+            id: "promotion2",
+            title: "Made for Everyday",
+            category: "Promotion",
+            description: "A product story shaped around comfort, purpose, and style.",
+          },
+          {
+            id: "promotion3",
+            title: "Designed to Inspire",
+            category: "Promotion",
+            description: "A visual campaign created to connect products with audiences.",
+          },
+        ]}
+      />
 
       <section className="services-cta">
         <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-6 sm:py-20">
