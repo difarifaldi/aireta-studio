@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Play, X } from "lucide-react";
+import React from "react";
 import { Link } from "react-router-dom";
+import InlineVideoCard from "./InlineVideoCard";
 
 export default function VideoStorySection({
   kicker,
@@ -9,21 +9,7 @@ export default function VideoStorySection({
   videos,
   tone = "light",
 }) {
-  const [selectedVideo, setSelectedVideo] = useState(null);
   const single = videos.length === 1;
-
-  useEffect(() => {
-    if (!selectedVideo) return undefined;
-
-    document.body.style.overflow = "hidden";
-    const close = (event) => event.key === "Escape" && setSelectedVideo(null);
-    window.addEventListener("keydown", close);
-
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", close);
-    };
-  }, [selectedVideo]);
 
   const heading = (
     <div className="context-video-heading">
@@ -43,33 +29,11 @@ export default function VideoStorySection({
   const cards = (
     <div className={single ? "context-video-single-card" : "context-video-grid"}>
       {videos.map((video, index) => (
-        <button
-          type="button"
-          className="video-card"
+        <InlineVideoCard
+          video={video}
+          index={index}
           key={video.id}
-          onClick={() => setSelectedVideo(video)}
-          aria-label={`Play ${video.title}`}
-        >
-          <span className="video-card-media">
-            <img
-              src={`${import.meta.env.BASE_URL}images/video-posters/${video.id}.webp`}
-              alt={video.title}
-              loading="lazy"
-            />
-            <span className="video-card-shade" />
-            <span className="video-play-button">
-              <Play size={18} strokeWidth={1.5} fill="currentColor" />
-            </span>
-            <span className="video-card-number">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-          </span>
-          <span className="video-card-copy">
-            <span className="video-card-category">{video.category}</span>
-            <span className="video-card-title">{video.title}</span>
-            <span className="video-card-description">{video.description}</span>
-          </span>
-        </button>
+        />
       ))}
     </div>
   );
@@ -90,47 +54,6 @@ export default function VideoStorySection({
         )}
       </div>
 
-      {selectedVideo && (
-        <div
-          className="video-modal"
-          role="dialog"
-          aria-modal="true"
-          aria-label={selectedVideo.title}
-          onClick={() => setSelectedVideo(null)}
-        >
-          <button
-            type="button"
-            className="video-modal-close"
-            aria-label="Close video"
-            onClick={() => setSelectedVideo(null)}
-          >
-            <X size={25} strokeWidth={1.4} />
-          </button>
-          <div
-            className="video-modal-inner"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <video
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-              poster={`${import.meta.env.BASE_URL}images/video-posters/${selectedVideo.id}.webp`}
-            >
-              <source
-                src={`${import.meta.env.BASE_URL}videos/optimized/${selectedVideo.id}.mp4`}
-                type="video/mp4"
-              />
-            </video>
-            <div className="video-modal-copy">
-              <p className="section-kicker">{selectedVideo.category}</p>
-              <h2 className="mt-2 font-serif text-2xl text-white sm:text-3xl">
-                {selectedVideo.title}
-              </h2>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

@@ -1299,6 +1299,20 @@ button {
   box-shadow: 0 12px 30px rgba(58, 43, 24, 0.1);
 }
 
+.video-card-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.inline-story-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #0d0b08;
+  object-fit: contain;
+}
+
 .video-card-media::after {
   content: "";
   position: absolute;
