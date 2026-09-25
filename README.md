@@ -121,15 +121,17 @@ Letakkan video asli di dalam folder koleksi pada `public/videos`, misalnya:
 
 ```text
 public/videos/
-├── campaigns/
-├── behind-the-scenes/
-└── photoshoots/
+├── behind/
+├── campaign/
+├── detail/
+├── process/
+└── promotion/
 ```
 
 Untuk mengoptimasi satu folder:
 
 ```bash
-npm run optimize:videos -- campaigns
+npm run optimize:videos -- process
 ```
 
 Untuk mengoptimasi semua folder video sekaligus:
@@ -140,18 +142,26 @@ npm run optimize:videos
 
 Script menerima MP4, MOV, M4V, MKV, AVI, dan WebM. Video dikonversi menjadi MP4 H.264 dengan sisi maksimal 1280 px, audio AAC 96 kbps, dan pengaturan agar video dapat mulai diputar sebelum seluruh file selesai diunduh.
 
-Contoh hasil untuk folder `campaigns`:
+Semua hasil video dan poster digabung dalam folder output yang sama, tetapi nama filenya tetap mengikuti kategori. Contoh hasil:
 
 ```text
-public/videos/campaigns/optimized/
-├── campaigns1.mp4
-├── campaigns2.mp4
-└── campaigns3.mp4
+public/videos/optimized/
+├── behind1.mp4
+├── campaign1.mp4
+├── detail1.mp4
+├── process1.mp4
+├── process2.mp4
+├── process3.mp4
+├── promotion1.mp4
+├── promotion2.mp4
+└── promotion3.mp4
 
-public/images/video-posters/campaigns/
-├── campaigns1.webp
-├── campaigns2.webp
-└── campaigns3.webp
+public/images/video-posters/
+├── behind1.webp
+├── campaign1.webp
+├── detail1.webp
+├── process1.webp
+└── promotion1.webp
 ```
 
 Poster WebP dibuat otomatis dari frame video pada detik pertama. Folder `optimized` akan dilewati saat script dijalankan kembali sehingga video hasil kompresi tidak diproses berulang kali. Video asli tidak dihapus.
@@ -162,10 +172,10 @@ Contoh penggunaan pada React:
 <video
   controls
   preload="none"
-  poster={`${import.meta.env.BASE_URL}images/video-posters/campaigns/campaigns1.webp`}
+  poster={`${import.meta.env.BASE_URL}images/video-posters/process1.webp`}
 >
   <source
-    src={`${import.meta.env.BASE_URL}videos/campaigns/optimized/campaigns1.mp4`}
+    src={`${import.meta.env.BASE_URL}videos/optimized/process1.mp4`}
     type="video/mp4"
   />
 </video>

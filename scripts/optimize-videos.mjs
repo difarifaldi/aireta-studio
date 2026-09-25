@@ -62,7 +62,10 @@ async function getTargetDirectories() {
   }
 
   return (await readdir(videosRoot, { withFileTypes: true }))
-    .filter((entry) => entry.isDirectory())
+    .filter(
+      (entry) =>
+        entry.isDirectory() && entry.name.toLowerCase() !== "optimized",
+    )
     .map((entry) => join(videosRoot, entry.name));
 }
 
@@ -84,8 +87,8 @@ for (const directory of directories) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
-  const outputDirectory = join(directory, "optimized");
-  const posterDirectory = join(postersRoot, folderLabel);
+  const outputDirectory = join(videosRoot, "optimized");
+  const posterDirectory = postersRoot;
 
   await mkdir(outputDirectory, { recursive: true });
   await mkdir(posterDirectory, { recursive: true });
