@@ -9,12 +9,7 @@ const videos = [
     category: "Behind the Scenes",
     description: "A closer look at the people and craft behind every piece.",
   },
-  {
-    id: "campaign1",
-    title: "Voices of the Brand",
-    category: "Campaign",
-    description: "An authentic story and perspective shared through the campaign.",
-  },
+
   {
     id: "detail1",
     title: "Textile in Detail",
@@ -25,13 +20,15 @@ const videos = [
     id: "process1",
     title: "The Cutting Process",
     category: "Process",
-    description: "Precision cutting as the first step toward a refined garment.",
+    description:
+      "Precision cutting as the first step toward a refined garment.",
   },
   {
     id: "process2",
     title: "Sampling in Motion",
     category: "Process",
-    description: "Transforming an initial design into a production-ready sample.",
+    description:
+      "Transforming an initial design into a production-ready sample.",
   },
   {
     id: "process3",
@@ -55,7 +52,8 @@ const videos = [
     id: "promotion3",
     title: "Designed to Inspire",
     category: "Promotion",
-    description: "A visual campaign created to connect products with audiences.",
+    description:
+      "A visual campaign created to connect products with audiences.",
   },
 ];
 

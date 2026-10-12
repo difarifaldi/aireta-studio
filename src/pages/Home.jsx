@@ -563,20 +563,6 @@ export default function Home() {
       <Portfolio />
       <CustomerFeedback />
 
-      <VideoStorySection
-        kicker="BRAND STORY"
-        title="A Voice Behind the Vision"
-        description="Hear the story, purpose, and perspective that shape a brand beyond the finished collection."
-        videos={[
-          {
-            id: "campaign1",
-            title: "Voices of the Brand",
-            category: "Campaign",
-            description: "An authentic story shared through a focused campaign conversation.",
-          },
-        ]}
-      />
-
       <ProductionJourney />
       <VideoStorySection
         kicker="BEHIND THE SCENES"
@@ -588,7 +574,8 @@ export default function Home() {
             id: "behind1",
             title: "Behind the Craft",
             category: "Behind the Scenes",
-            description: "A closer look at the people and craft behind every piece.",
+            description:
+              "A closer look at the people and craft behind every piece.",
           },
         ]}
       />
