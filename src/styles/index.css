@@ -1468,7 +1468,13 @@ button {
 }
 
 .context-video-warm {
-  background: #f5f0e7;
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(176, 141, 87, 0.16),
+      transparent 24rem
+    ),
+    #ebe0d1;
 }
 
 .context-video-single {
