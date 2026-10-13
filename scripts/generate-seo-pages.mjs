@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const dist = new URL("../dist/", import.meta.url);
 const distPath = fileURLToPath(dist);
 const source = await readFile(new URL("index.html", dist), "utf8");
-const siteUrl = "https://difarifaldi.github.io/aireta-studio";
+const siteUrl = "https://airetaproductionhouse.com";
 
 const pages = [
   {
@@ -32,7 +32,8 @@ const pages = [
   {
     route: "videos",
     title: "Fashion Videos & Campaign Showcase | Aireta Studio",
-    description: "Explore Aireta Studio fashion campaigns, production processes, garment details, promotional videos, and behind-the-scenes stories.",
+    description:
+      "Explore Aireta Studio fashion campaigns, production processes, garment details, promotional videos, and behind-the-scenes stories.",
     image: `${siteUrl}/images/video-posters/promotion1.webp`,
   },
   {
@@ -76,7 +77,14 @@ const pages = [
     title: "Basic wear Collection & Manufacturing | Aireta Studio",
     description:
       "Explore Aireta Studio's Basic wear collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
-    image: `${siteUrl}/images/basic/hijab1.webp`,
+    image: `${siteUrl}/images/basic/basic13.webp`,
+  },
+  {
+    route: "portfolio/embroidery",
+    title: "Embroidery Collection & Manufacturing | Aireta Studio",
+    description:
+      "Explore Aireta Studio's Embroidery collection, featuring comfortable silhouettes, thoughtful details, and professional garment production.",
+    image: `${siteUrl}/images/embroidery/embroidery10.webp`,
   },
   {
     route: "contact",

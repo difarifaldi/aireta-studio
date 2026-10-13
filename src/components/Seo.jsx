@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const SITE_URL = "https://difarifaldi.github.io/aireta-studio";
+export const SITE_URL = "https://airetaproductionhouse.com";
 export const SITE_NAME = "Aireta Studio";
 const DEFAULT_IMAGE = `${SITE_URL}/images/main-landscape.png`;
 

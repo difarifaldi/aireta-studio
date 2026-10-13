@@ -23,7 +23,7 @@ npm run dev
 Website development dapat dibuka melalui alamat yang ditampilkan oleh Vite, biasanya:
 
 ```text
-http://localhost:5173/aireta-studio/
+http://localhost:5173/
 ```
 
 ## Production Build

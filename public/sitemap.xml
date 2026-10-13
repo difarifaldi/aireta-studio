@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/</loc>
+    <loc>https://airetaproductionhouse.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/our-services/</loc>
+    <loc>https://airetaproductionhouse.com/our-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/kidswear/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/kidswear/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/videos/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/manwear/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/manwear/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/pattern/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/pattern/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/serambit/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/serambit/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/dresses/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/dresses/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/hijab/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/hijab/</loc>
+    <loc>https://airetaproductionhouse.com/portfolio/basic/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-  <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/portfolio/basic/</loc>
+    <loc>https://airetaproductionhouse.com/videos/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://difarifaldi.github.io/aireta-studio/contact/</loc>
+    <loc>https://airetaproductionhouse.com/embroidery/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airetaproductionhouse.com/contact/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

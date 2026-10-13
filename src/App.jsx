@@ -13,6 +13,7 @@ import Serambit from "./pages/Serambit";
 import Hijab from "./pages/Hijab";
 import Dresses from "./pages/Dresses";
 import Basic from "./pages/Basic";
+import Embroidery from "./pages/Embroidery";
 import ScrollToTop from "./components/ScrollToTop";
 import Videos from "./pages/Videos";
 
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/portfolio/hijab" element={<Hijab />} />
           <Route path="/portfolio/dresses" element={<Dresses />} />
           <Route path="/portfolio/basic" element={<Basic />} />
+          <Route path="/portfolio/embroidery" element={<Embroidery />} />
           <Route path="/videos" element={<Videos />} />
           <Route
             path="/location"

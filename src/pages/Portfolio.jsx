@@ -38,10 +38,13 @@ const projects = [
     image: "basic/basic20.webp",
     collection: "basic",
   },
+  {
+    title: "Embroidery",
+    image: "embroidery/embroidery11.webp",
+    collection: "embroidery",
+  },
 
   { title: "Prayer Set", image: "coming.png", collection: "prayer" },
-
-  { title: "Embroidery", image: "coming.png", collection: "embroidery" },
 ];
 
 export default function Portfolio() {
@@ -94,6 +97,7 @@ export default function Portfolio() {
       return;
     }
     if (project.collection === "embroidery") {
+      navigate("/portfolio/embroidery");
       return;
     }
     setSelected(project);
